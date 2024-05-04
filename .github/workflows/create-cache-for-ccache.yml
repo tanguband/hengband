@@ -13,8 +13,8 @@ jobs:
     name: Japanese version with clang (without using pre-compiled headers)
     uses: ./.github/workflows/build-with-autotools.yml
     with:
-      cxx: "g++ -std=gnu++11 -std=gnu++20"
-      cxx-flags: "g++ -pipe -O3 -Werror -Wall -Wextra -Wno-unused-const-variable -Wno-invalid-source-encoding -stdlib=libc++ -std=gnu++11 -std=gnu++20"
+      cxx: clang++-15
+      cxx-flags: "-pipe -O3 -Werror -Wall -Wextra -Wno-unused-const-variable -Wno-invalid-source-encoding -stdlib=libc++ -std=gnu++2a"
       configure-opts: "--disable-pch"
       use-ccache: true
 
